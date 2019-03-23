@@ -7,15 +7,22 @@
   
   
   
-  <title>Archives: 2019/3 | Chengqb的博客</title>
+  <title>Chengqb的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="1、分为5部分：方法是在栈当中运行的（1）、栈（Stack）：存放方法中的局部变量，一旦超出作用域，栈中的局部变量就会消失. （2）、堆（Heap）：存放new出来的东西，堆中的东西都有一个16进制的地址值。 （3）、方法区（Method Area）：存放.class的相关信息，包括方法的信息（死信息）。 （4）、本地方法栈（Native Method Stack）：与操作系统相关. （5）、寄存">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Chengqb的博客">
-<meta property="og:url" content="https://Chengqb.github.io/archives/2019/03/index.html">
+<meta property="og:url" content="https://Chengqb.github.io/2019/03/23/Java的内存/index.html">
 <meta property="og:site_name" content="Chengqb的博客">
+<meta property="og:description" content="1、分为5部分：方法是在栈当中运行的（1）、栈（Stack）：存放方法中的局部变量，一旦超出作用域，栈中的局部变量就会消失. （2）、堆（Heap）：存放new出来的东西，堆中的东西都有一个16进制的地址值。 （3）、方法区（Method Area）：存放.class的相关信息，包括方法的信息（死信息）。 （4）、本地方法栈（Native Method Stack）：与操作系统相关. （5）、寄存">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190323144749599.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxOTcwMDI1,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190323144808280.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxOTcwMDI1,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-03-23T06:48:44.069Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chengqb的博客">
+<meta name="twitter:description" content="1、分为5部分：方法是在栈当中运行的（1）、栈（Stack）：存放方法中的局部变量，一旦超出作用域，栈中的局部变量就会消失. （2）、堆（Heap）：存放new出来的东西，堆中的东西都有一个16进制的地址值。 （3）、方法区（Method Area）：存放.class的相关信息，包括方法的信息（死信息）。 （4）、本地方法栈（Native Method Stack）：与操作系统相关. （5）、寄存">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190323144749599.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxOTcwMDI1,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="Chengqb的博客" type="application/atom+xml">
   
@@ -40,8 +47,8 @@
           fancybox: true,
           animate: true,
           isHome: false,
-          isPost: false,
-          isArchive: true,
+          isPost: true,
+          isArchive: false,
           isTag: false,
           isCategory: false,
           open_in_new: false
@@ -268,75 +275,181 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-Java的内存" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/Chengqb.github.io/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/Chengqb.github.io/2019/03/23/Java的内存/" class="archive-article-date">
-      <time datetime="2019-03-23T06:48:53.961Z" itemprop="datePublished">03-23</time>
+    <div class="article-meta">
+      <a href="/Chengqb.github.io/2019/03/23/Java的内存/" class="article-date">
+      <time datetime="2019-03-23T06:48:53.961Z" itemprop="datePublished">2019-03-23</time>
 </a>
 
-        </div>
-         
-
-        <div class="article-info info-on-archive">
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
           
+        <h2 id="1、分为5部分：方法是在栈当中运行的"><a href="#1、分为5部分：方法是在栈当中运行的" class="headerlink" title="1、分为5部分：方法是在栈当中运行的"></a>1、分为5部分：方法是在栈当中运行的</h2><p><strong>（1）、栈（Stack）：</strong>存放方法中的局部变量，一旦超出作用域，栈中的局部变量就会消失.</p>
+<p><strong>（2）、堆（Heap）：</strong>存放new出来的东西，堆中的东西都有一个16进制的地址值。</p>
+<p><strong>（3）、方法区（Method Area）：</strong>存放.class的相关信息，包括方法的信息（死信息）。</p>
+<p><strong>（4）、本地方法栈（Native Method Stack）：</strong>与操作系统相关.</p>
+<p><strong>（5）、寄存器（pc Register）：</strong>与CPU相关。</p>
+<h2 id="2、例：数组的内存分配（内存图）"><a href="#2、例：数组的内存分配（内存图）" class="headerlink" title="2、例：数组的内存分配（内存图）"></a>2、例：数组的内存分配（内存图）</h2><p><img src="https://img-blog.csdnimg.cn/20190323144749599.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxOTcwMDI1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="3、例：对象的内存分配（内存图）"><a href="#3、例：对象的内存分配（内存图）" class="headerlink" title="3、例：对象的内存分配（内存图）"></a>3、例：对象的内存分配（内存图）</h2><p><img src="https://img-blog.csdnimg.cn/20190323144808280.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxOTcwMDI1,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/Chengqb.github.io/2019/03/23/Java的内存/"></a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Chengqb 的个人博客">Chengqb</a></p>
+        <p><span>发布时间:</span>2019年03月23日 - 14时48分</p>
+        <p><span>最后更新:</span>2019年03月23日 - 14时48分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/Chengqb.github.io/2019/03/23/Java的内存/" title>https://Chengqb.github.io/2019/03/23/Java的内存/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://Chengqb.github.io/2019/03/23/Java的内存/　　作者: Chengqb" title></span>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target="_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/Chengqb.github.io/2019/03/23/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
+  
 </article>
-  
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、分为5部分：方法是在栈当中运行的"><span class="toc-number">1.</span> <span class="toc-text">1、分为5部分：方法是在栈当中运行的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、例：数组的内存分配（内存图）"><span class="toc-number">2.</span> <span class="toc-text">2、例：数组的内存分配（内存图）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、例：对象的内存分配（内存图）"><span class="toc-number">3.</span> <span class="toc-text">3、例：对象的内存分配（内存图）</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/Chengqb.github.io/2019/03/23/hello-world/" class="archive-article-date">
-      <time datetime="2019-03-23T04:57:06.972Z" itemprop="datePublished">03-23</time>
-</a>
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Chengqb.github.io/2019/03/23/hello-world/">Hello World</a>
-    </h1>
-  
-
-
-        <div class="article-info info-on-archive">
-          
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
+        <section class="changyan" id="comments">
+  <!--<div id="uyan_frame"></div>-->
+  <div id="SOHUCS"></div>
+  <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
+  <script type="text/javascript">
+    window.changyan.api.config({
+      appid: 'xxxx',
+      conf: 'xxxxxxxxx'
+    });
+  </script>
+</section>
     
 
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/Chengqb.github.io/2019/03/23/hello-world/" title="下一篇: Hello World">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/Chengqb.github.io/2019/03/23/Java的内存/">Java的内存</a></li><li class="post-list-item"><a class="post-list-link" href="/Chengqb.github.io/2019/03/23/hello-world/">Hello World</a></li></ul>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
 
 </div>
       <footer id="footer">
@@ -428,18 +541,6 @@ ga('send', 'pageview');
         };
     })
 </script>
-
-    <button class="hide-labels">TAG 开关</button>
-    
-<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            $("button").click(function() {
-                $(".article-info").toggle(200);
-            });
-        });
-    </script>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
